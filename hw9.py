@@ -1,4 +1,11 @@
 #!usr/bin/python3
+"""
+This file creates a script that generates a random list and then sorts the list using a bubble
+sort, merge sort, and pythons built in list sort. The purpose of this is to use the cProfile 
+module to time the different sort functions. The results of the cProfile are included as comments
+at the end of the file.
+"""
+
 import random
 
 def bubble_sort(unsortlist):
@@ -36,14 +43,15 @@ def merge_sort(unsortlist):
         return templist
     return unsortlist
 
-randlist = [random.randint(0, 100000000) for i in range(10000)]
-# print(randlist)
-merge_list = merge_sort(randlist)
-randlist.sort()
-bubble_list = bubble_sort(randlist)
-# print(merge_list)
-# print(bubble_list)
-# print(randlist)
+if __name__ == "__main__":
+    randlist = [random.randint(0, 100000000) for i in range(1000)]
+    # print(randlist)
+    merge_list = merge_sort(randlist)
+    randlist.sort()
+    bubble_list = bubble_sort(randlist)
+    # print(merge_list)
+    # print(bubble_list)
+    # print(randlist)
 
 """
 Thu Nov  7 18:05:54 2019    hw9_results
